@@ -1,5 +1,9 @@
 # async-sema
 
+Made some changes from the original [async-sema](https://github.com/vercel/async-sema) to make it work as async message queue.
+
+---
+
 This is a semaphore implementation for use with `async` and `await`. The
 implementation follows the traditional definition of a semaphore rather than the
 definition of an asynchronous semaphore seen in some js community examples.

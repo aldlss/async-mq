@@ -54,19 +54,6 @@ class Deque {
 		return length + 1;
 	}
 
-	pop() {
-		const length = this._length;
-		if (length === 0) {
-			return void 0;
-		}
-		const i = (this._front + length - 1) & (this._capacity - 1);
-		const ret = this.arr[i];
-		this.arr[i] = void 0;
-		this._length = length - 1;
-
-		return ret;
-	}
-
 	shift() {
 		const length = this._length;
 		if (length === 0) {
@@ -172,7 +159,7 @@ export class Sema {
 	}
 
 	tryAcquire(): any | undefined {
-		return this.free.pop();
+		return this.free.shift();
 	}
 
 	async acquire(): Promise<any> {
